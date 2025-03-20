@@ -36,9 +36,12 @@ return [
             'secret' => env('PUSHER_APP_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
-                'host' => env('PUSHER_HOST') ?: 'api-'.env('PUSHER_APP_CLUSTER', 'mt1').'.pusher.com',
-                'port' => env('PUSHER_PORT', 443),
-                'scheme' => env('PUSHER_SCHEME', 'https'),
+                // 'host' => env('PUSHER_HOST') ?: 'api-'.env('PUSHER_APP_CLUSTER', 'mt1').'.pusher.com',// default
+                'host' => '127.0.0.1',
+                'port' => env('PUSHER_PORT', 6001),
+                // 'port' => env('PUSHER_PORT', 443), // default
+                // 'scheme' => env('PUSHER_SCHEME', 'https'), // default
+                'scheme' => 'http',
                 'encrypted' => true,
                 'useTLS' => env('PUSHER_SCHEME', 'https') === 'https',
             ],

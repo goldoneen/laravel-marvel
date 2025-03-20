@@ -35,3 +35,8 @@ Route::get('/posts/{id}/edit', [BlogController::class, 'edit']);
 Route::put('/posts/{id}', [BlogController::class, 'update']);
 // Delete a specific blog post
 Route::delete('/posts/{id}', [BlogController::class, 'destroy']);
+
+
+////////////////////
+Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register');
